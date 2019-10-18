@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_891f3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_891f3.dir/build.make CMakeFiles/cmTC_891f3.dir/build
+make[1]: Entering directory '/home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_891f3.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_891f3.dir/CheckSymbolExists.c.o   -c /home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_891f3
+/home/sparta/下载/clion-2018.3.3/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_891f3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_891f3.dir/CheckSymbolExists.c.o  -o cmTC_891f3 
+CMakeFiles/cmTC_891f3.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_891f3.dir/build.make:86: recipe for target 'cmTC_891f3' failed
+make[1]: *** [cmTC_891f3] Error 1
+make[1]: Leaving directory '/home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_891f3/fast' failed
+make: *** [cmTC_891f3/fast] Error 2
+
+File /home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c0ae3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c0ae3.dir/build.make CMakeFiles/cmTC_c0ae3.dir/build
+make[1]: Entering directory '/home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c0ae3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c0ae3.dir/CheckFunctionExists.c.o   -c /home/sparta/下载/clion-2018.3.3/bin/cmake/linux/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c0ae3
+/home/sparta/下载/clion-2018.3.3/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0ae3.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c0ae3.dir/CheckFunctionExists.c.o  -o cmTC_c0ae3 -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c0ae3.dir/build.make:86: recipe for target 'cmTC_c0ae3' failed
+make[1]: *** [cmTC_c0ae3] Error 1
+make[1]: Leaving directory '/home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_c0ae3/fast' failed
+make: *** [cmTC_c0ae3/fast] Error 2
+
+

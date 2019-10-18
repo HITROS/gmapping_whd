@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sparta/catkin_slam/src/slam_gmapping/slam_gmapping/cmake-build-debug/devel/setup.sh
