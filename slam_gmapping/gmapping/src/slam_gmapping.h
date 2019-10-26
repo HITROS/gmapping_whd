@@ -73,12 +73,12 @@ class SlamGMapping
     tf::TransformBroadcaster* tfB_;
 
     GMapping::GridSlamProcessor* gsp_;
-    GMapping::RangeSensor* gsp_laser_;
+    GMapping::RangeSensor* gsp_laser_;   //激光的角度,使其在期望的边界 -x到x
     // The angles in the laser, going from -x to x (adjustment is made to get the laser between
     // symmetrical bounds as that's what gmapping expects)
-    std::vector<double> laser_angles_;
+    std::vector<double> laser_angles_;     //在原始激光桢中,Z面朝上对应的中心激光姿态
     // The pose, in the original laser frame, of the corresponding centered laser with z facing up
-    tf::Stamped<tf::Pose> centered_laser_pose_;
+    tf::Stamped<tf::Pose> centered_laser_pose_;   //根据扫描元素的顺序和扫描帧的方向，我们可能需要更改扫描顺序
     // Depending on the order of the elements in the scan and the orientation of the scan frame,
     // We might need to change the order of the scan
     bool do_reverse_range_;
@@ -88,7 +88,7 @@ class SlamGMapping
     bool got_first_scan_;
 
     bool got_map_;
-    nav_msgs::GetMap::Response map_;
+    nav_msgs::GetMap::Response map_;    //navigation包的消息格式 nav_msgs
 
     ros::Duration map_update_interval_;
     tf::Transform map_to_odom_;

@@ -24,3 +24,5 @@ rospack find openslam_gmapping
 安装成功后如图编译完如图所示
 
 ![](/home/sparta/桌面/成功截图.png)
+
+asasasas

@@ -36,11 +36,11 @@
 int
 main(int argc, char** argv)
 {
-  ros::init(argc, argv, "slam_gmapping");   /*生成GridSlamProcesssor对象以及tf广播对象*/
+  ros::init(argc, argv, "slam_gmapping");   //ros启动节点的程序 节点名称即为slam_gmapping
 
-  SlamGMapping gn;                        /*Generate Ninja，是Google为Ninja专门开发的上层编译框架，可以生成Ninja可以识别的输入文件。*/
-  gn.startLiveSlam();
-  ros::spin();
+  SlamGMapping gn;                      //定义一个名为gn的量
+  gn.startLiveSlam();                //运行startliveslam函数
+  ros::spin();                   //用于触发topic、service的响应队列 启动节点的标准格式
 
   return(0);
 }

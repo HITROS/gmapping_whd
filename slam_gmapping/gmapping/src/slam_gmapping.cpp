@@ -173,7 +173,7 @@ void SlamGMapping::init()
 
   //gsp_ = new GMapping::GridSlamProcessor(std::cerr);
   gsp_ = new GMapping::GridSlamProcessor();            //生成GridSlamProcesssor对象
-  ROS_ASSERT(gsp_);
+  ROS_ASSERT(gsp_);                                    //采用ROS包中的assert检查前提条件，数据结构完整性以及内存分配器的返回值
 
   tfB_ = new tf::TransformBroadcaster();               //生成tf广播对象
   ROS_ASSERT(tfB_);
@@ -627,7 +627,7 @@ SlamGMapping::laserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
 
   GMapping::OrientedPoint odom_pose;
 
-  if(addScan(*scan, odom_pose))
+  if(addScan(*scan, odom_pose))    //addscan成功,那么将激光数据插入到地图中
   {
     ROS_DEBUG("scan processed");
 
@@ -645,7 +645,7 @@ SlamGMapping::laserCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
 
     if(!got_map_ || (scan->header.stamp - last_map_update) > map_update_interval_)
     {
-      updateMap(*scan);
+      updateMap(*scan);                           //更新地图
       last_map_update = scan->header.stamp;
       ROS_DEBUG("Updated the map");
     }

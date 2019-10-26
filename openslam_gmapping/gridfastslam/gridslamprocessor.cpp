@@ -267,7 +267,7 @@ void GridSlamProcessor::setMotionModelParameters
   
   void GridSlamProcessor::init(unsigned int size, double xmin, double ymin, double xmax, double ymax, double delta, OrientedPoint initialPose){
     m_xmin=xmin;
-    m_ymin=ymin;
+    m_ymin=ymin;                                                   
     m_xmax=xmax;
     m_ymax=ymax;
     m_delta=delta;
